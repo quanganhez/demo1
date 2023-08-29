@@ -1,3 +1,48 @@
+<?php
+
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+    $database = 'demo1';
+    $con = new mysqli($servername, $username, $password, $database);
+
+    // Check connection
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $user_name = $_POST["user_name"];
+        $user_pass = $_POST["user_pass"];
+
+        // Truy vấn kiểm tra tài khoản và mật khẩu
+        $sql = "SELECT id, user_name, user_pass, role FROM db_user WHERE user_name = '$user_name' AND user_pass = '$user_pass'";
+        $result = $con->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $role = $row["role"];
+
+            if ($role == 1) {
+                // Chuyển hướng đến trang admin
+                header("Location: ./admin/admin.php");
+                exit();
+            } else if ($role == 0) {
+                // Chuyển hướng đến trang user
+                header("Location: ./login/login.php");
+                exit();
+            }
+        } else {
+            echo "Tài khoản hoặc mật khẩu không đúng.";
+        }
+    }
+
+    $con->close();
+    ?>
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -145,33 +190,36 @@
 
     <!-- Button Login -->
 
-    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h5 class="modal-title d-flex align-items-center">
-                        <i class="bi bi-person-circle fs-3 me-2"></i> User Login
-                    </h5>
-                    <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST">
+                    <div class="modal-header">
+                        <h5 class="modal-title d-flex align-items-center">
+                            <i class="bi bi-person-circle fs-3 me-2"></i> User Login
+                        </h5>
+                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Email address</label>
-                        <input type="email" class="form-control shadow-none">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input name="user_name" type="text" class="form-control shadow-none">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input name="user_pass" type="password" class="form-control shadow-none">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
+                            <a href="javascript: void(0)" class="text-secondary text-decoration-none ">Forgot
+                                Password?</a>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="email" class="form-control shadow-none">
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
-                        <a href="javascript: void(0)" class="text-secondary text-decoration-none">Forgot Password?</a>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
     </div>
 
     <!-- Button Register -->
