@@ -28,7 +28,7 @@
                 exit();
             }
         } else {
-            $error = "Incorrect username or password."; // Set the error message
+            $error = " ";
         }
     }
     $con->close();

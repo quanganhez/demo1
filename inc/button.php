@@ -1,7 +1,6 @@
 <div class="container">
         <div class="modal-body">
             <?php if (!empty($error)) { ?>
-                <div class="alert alert-danger"><?php echo $error; ?></div>
                 <script>
                     window.onload = function() {
                         var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
@@ -11,20 +10,6 @@
                     };
                 </script>
             <?php } ?>
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <div class="mb-3">
-                    <label class="form-label">Email address</label>
-                    <input name="user_name" type="text" class="form-control shadow-none">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input name="user_pass" type="password" class="form-control shadow-none">
-                </div>
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                    <button type="submit" class="btn btn-dark shadow-none">LOGIN</button>
-                    <a href="javascript: void(0)" class="text-secondary text-decoration-none">Forgot Password?</a>
-                </div>
-            </form>
         </div>
     </div>
 
