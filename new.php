@@ -12,7 +12,7 @@
 
 <body>
     <?php require_once('./inc/header.php'); ?>
-    <div class="container-fluid " id="news">
+    <div class="container-fluid" id="news">
         <p class="fw-bold  fs-3">News </p>
         <div id="" class="d-flex flex-row gap-3">
             <img class="border rounded" src="./images/Tours/4.jpg" alt="" width="800px" height="550px">
@@ -91,8 +91,7 @@
 
     <!-- Button Login -->
 
-    <div class="modal fade" id="loginModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="loginModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form>
@@ -100,8 +99,7 @@
                         <h5 class="modal-title d-flex align-items-center">
                             <i class="bi bi-person-circle fs-3 me-2"></i> User Login
                         </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
@@ -125,8 +123,7 @@
 
     <!-- Button Register -->
 
-    <div class="modal fade" id="registerModal" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="registerModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form>
@@ -134,8 +131,7 @@
                         <h5 class="modal-title d-flex align-items-center">
                             <i class="bi bi-person-lines-fill fs-3 me-2"></i> User Register
                         </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <span class="badge text-bg-light mb-3 text-wrap lh-base note-font">
@@ -189,53 +185,52 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
         <script>
-        var swiper = new Swiper(".swiper-container", {
-            spaceBetween: 30,
-            effect: "fade",
-            loop: true,
-            autoplay: {
-                delay: 3500,
-                disableOnIteraction: false,
-            }
-        });
-        var swiper = new Swiper(".swiper-comment", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            slidesPerView: "2",
-            loop: true,
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                640: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 2,
+            var swiper = new Swiper(".swiper-container", {
+                spaceBetween: 30,
+                effect: "fade",
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnIteraction: false,
                 }
-            }
-        });
+            });
+            var swiper = new Swiper(".swiper-comment", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                slidesPerView: "2",
+                loop: true,
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                    }
+                }
+            });
         </script>
 
 </body>
