@@ -441,11 +441,11 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
-                            <input type="email" class="form-control shadow-none">
+                            <input type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="email" class="form-control shadow-none">
+                            <input type="password" class="form-control shadow-none">
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
@@ -460,7 +460,7 @@
 
     <!-- Button Register -->
 
-    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="registerModal" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -509,15 +509,18 @@
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control shadow-none">
+                                    <input type="password" class="form-control shadow-none" id="password"
+                                        onchange="check_pass();">
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control shadow-none">
+                                    <input type="password" class="form-control shadow-none" id="retype_password"
+                                        onchange="check_pass();">
                                 </div>
                             </div>
                             <div class="text-center my-1">
-                                <button type="summit" class="btn btn-dark shadow-none">REGISTER</button>
+                                <button type="summit" class="btn btn-dark shadow-none" id="submit" disabled
+                                    value="registration">REGISTER</button>
                             </div>
                         </div>
                 </form>
@@ -572,7 +575,7 @@
             }
         });
         </script>
-
+        <script src="./js/invalid.js"></script>
 </body>
 
 </html>

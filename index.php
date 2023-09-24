@@ -366,7 +366,7 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
-                            <input type="email" class="form-control shadow-none">
+                            <input type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
@@ -434,21 +434,24 @@
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control shadow-none" id="password">
+                                    <input type="password" class="form-control shadow-none" id="password"
+                                        onchange="check_pass();">
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control shadow-none" id="comfirm_password">
+                                    <input type="password" class="form-control shadow-none" id="retype_password"
+                                        onchange="check_pass();">
                                 </div>
                             </div>
                             <div class="text-center my-1">
-                                <button type="summit" class="btn btn-dark shadow-none" id="register">REGISTER</button>
+                                <button type="summit" class="btn btn-dark shadow-none" id="submit" disabled
+                                    value="registration">REGISTER</button>
                             </div>
                         </div>
                 </form>
             </div>
         </div>
-
+        <script src="./js/invalid.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>

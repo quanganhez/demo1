@@ -75,3 +75,23 @@ input::-webkit-inner-spin-button {
 .invalid {
     border-color: red;
 }
+
+#guide p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#news a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#news a {
+
+    text-decoration: none;
+}
+
+#new h2:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

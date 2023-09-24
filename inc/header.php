@@ -18,11 +18,9 @@
                     <a class="nav-link me-2" href="tour.php">Tours</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="#">News</a>
+                    <a class="nav-link me-2" href="new.php">News</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link me-2" href="#">Sales</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link me-2" href="contact.php">Contact Us</a>
                 </li>

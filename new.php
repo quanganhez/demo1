@@ -1,92 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Travel - About Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Page</title>
     <?php require('./inc/links.php') ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="bg-light">
+<body>
+    <?php require_once('./inc/header.php'); ?>
+    <div class="container-fluid " id="news">
+        <p class="fw-bold  fs-3">News </p>
+        <div id="" class="d-flex flex-row gap-3">
+            <img class="border rounded" src="./images/Tours/4.jpg" alt="" width="800px" height="550px">
+            <div class="d-flex justify-content-between flex-column">
+                <div class="d-flex flex-row">
+                    <img class="border rounded" src="./images/Tours/2.jpg" alt="" width="210px" height="144px">
+                    <div class="mx-3 d-flex flex-column">
+                        <a class="fs-4 text-danger fw-bold  ">Tin tức dữ liệu </a>
+                        <p class="fs-6 fw-normal">Tour Đài Loan 2023: Mùa Thu Trọn Vẹn Và Hấp Dẫn Đang Chờ Đón Bạn</p>
+                        <p class="fs-6">22/09/2023</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row">
+                    <img class="border rounded" src="./images/Tours/2.jpg" alt="" width="210px" height="144px">
+                    <div class="mx-3 d-flex flex-column">
+                        <a class="fs-4 text-danger fw-bold ">Tin tức dữ liệu </a>
+                        <p class="fs-6 fw-normal">Tour Đài Loan 2023: Mùa Thu Trọn Vẹn Và Hấp Dẫn Đang Chờ Đón Bạn</p>
+                        <p class="fs-6">22/09/2023</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row">
+                    <img class="border rounded" src="./images/Tours/3.jpg" alt="" width="210px" height="144px">
+                    <div class="mx-3 d-flex flex-column">
+                        <a class="fs-4  text-danger fw-bold   "> Tin tức dữ liệu </a>
+                        <p class="fs-6 fw-normal">Tour Đài Loan 2023: Mùa Thu Trọn Vẹn Và Hấp Dẫn Đang Chờ Đón Bạn</p>
+                        <p class="fs-6">22/09/2023</p>
+                    </div>
+                </div>
 
-    <!-- Navigation -->
 
-    <?php require('./inc/header.php') ?>
-
-    <!-- Facilities Page -->
-
-    <div class="my-5 px-4">
-        <h1 class="fw-bold header-font text-center">About Us</h1>
-        <div class="header-line bg-dark"></div>
-        <p class="text-center mt-3">
-            Our company can help you with a wide range of travel needs,
-            Ztravel company can be a valuable resource for travelers, especially those who are planning complex trips or
-            traveling to unfamiliar destinations. They can save you time and money, and they can help you to avoid any
-            potential problems.
-            Ztravel company is a full-service travel agency that has been helping travelers to explore the world for
-            over 50 years. We specialize in creating custom travel packages to suit the needs and interests of all of
-            our clients. Whether you are looking for a romantic getaway, a family vacation, or an adventure trip, we can
-            help you to plan the perfect trip.
-
-        </p>
-    </div>
-
-    <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-                <h2 class="mb-3">Ztravel company</h2>
-                <p>
-                    " Our team of experienced travel agents has a wealth of knowledge about destinations all over the
-                    world. We
-                    can help you to choose the right destination for your trip, and we can book all of your travel
-                    arrangements
-                    for you. We can also provide you with advice on what to see and do, and we can help you to obtain
-                    any
-                    necessary visas or other travel documents.
-
-                    We are committed to providing our clients with the best possible travel experience. We take the time
-                    to
-                    understand your needs and interests, and we work hard to create a travel package that you will love.
-                    Contact
-                    us today to start planning your dream vacation!"
-                </p>
-            </div>
-            <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1 tour-item rounded">
-                <img src="./images/About/learder.png" class="w-100">
             </div>
         </div>
     </div>
-
-    <div class="container mt-5">
+    <div class="container-fluid my-4" id="guide">
+        <p class="fw-bold fs-3">Travel guide</p>
         <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4 px-4 text-center">
-                <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop-up">
-                    <img src="./images/About/1.png" width="80px">
-                    <h3 class="mt-3">500+ Tours</h3>
-                </div>
+            <div class="col">
+                <img class="border rounded" width="100%" height="250px" src="./images/Tours/6.jpg" alt="">
+                <p class="fw-bold fs-4 mt-1 ">Lễ hội ruộng bậc thang Mù Cang Chải 2023</p>
+                <p>17/02/2000</p>
             </div>
-            <div class="col-lg-3 col-md-6 mb-4 px-4 text-center">
-                <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop-up">
-                    <img src="./images/About/2.png" width="80px">
-                    <h3 class="mt-3">300+ Customer</h3>
-                </div>
+            <div class="col">
+                <img class="border rounded" width="100%" height="250px" src="./images/Tours/5.jpg" alt="">
+                <p class="fw-bold fs-4 mt-1 ">Lễ hội ruộng bậc thang Mù Cang Chải 2023</p>
+                <p>17/02/2000</p>
             </div>
-            <div class="col-lg-3 col-md-6 mb-4 px-4 text-center">
-                <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop-up">
-                    <img src="./images/About/3.png" width="80px">
-                    <h3 class="mt-3">100+ Reviews</h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 px-4 text-center">
-                <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop-up">
-                    <img src="./images/About/4.png" width="80px">
-                    <h3 class="mt-3">200+ Staff</h3>
-                </div>
+            <div class="col">
+                <img class="border rounded" width="100%" height="250px" src="./images/Tours/4.jpg" alt="">
+                <p class="fw-bold fs-4 mt-1 ">Lễ hội ruộng bậc thang Mù Cang Chải 2023</p>
+                <p>17/02/2000</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <img class="border rounded" width="100%" height="250px" src="./images/Tours/3.jpg" alt="">
+                <p class="fw-bold fs-4 mt-1 ">Lễ hội ruộng bậc thang Mù Cang Chải 2023</p>
+                <p>17/02/2000</p>
+            </div>
+            <div class="col">
+                <img class="border rounded" width="100%" height="250px" src="./images/Tours/2.jpg" alt="">
+                <p class="fw-bold fs-4 mt-1 ">Lễ hội ruộng bậc thang Mù Cang Chải 2023</p>
+                <p>17/02/2000</p>
+            </div>
+            <div class="col">
+                <img class="border rounded" width="100%" height="250px" src="./images/Tours/1.jpg" alt="">
+                <p class="fw-bold fs-4 mt-1 ">Lễ hội ruộng bậc thang Mù Cang Chải 2023</p>
+                <p>17/02/2000</p>
+            </div>
+        </div>
+
     </div>
 
     <!-- Footer -->
@@ -178,18 +174,15 @@
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control shadow-none" id="password"
-                                        onchange="check_pass();">
+                                    <input type="password" class="form-control shadow-none">
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control shadow-none" id="retype_password"
-                                        onchange="check_pass();">
+                                    <input type="password" class="form-control shadow-none">
                                 </div>
                             </div>
                             <div class="text-center my-1">
-                                <button type="summit" class="btn btn-dark shadow-none" id="submit" disabled
-                                    value="registration">REGISTER</button>
+                                <button type="summit" class="btn btn-dark shadow-none">REGISTER</button>
                             </div>
                         </div>
                 </form>
@@ -200,7 +193,7 @@
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-        <script src="./js/invalid.js"></script>
+
         <script>
         var swiper = new Swiper(".swiper-container", {
             spaceBetween: 30,

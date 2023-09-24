@@ -32,22 +32,26 @@
         <div class="row  ">
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4  ">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1693039036148!5m2!1svi!2s" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <h5 class="mt-2">Address</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1693039036148!5m2!1svi!2s"
+                        width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <h4 class="mt-2">Address</h4>
 
-                    <a href="https://goo.gl/maps/RPFmhsk5iGP35XL79" class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <a href="https://goo.gl/maps/RPFmhsk5iGP35XL79"
+                        class="d-inline-block mb-2 text-decoration-none text-dark">
                         <i class="bi bi-geo-alt-fill"></i> Ha Noi, Viet Nam
                     </a>
 
                     <br>
                     <i class="bi bi-geo-alt-fill"></i> <a>128C Dai La, Hai Ba Trung, Ha Noi</a>
-                    <h5 class="mt-2">Call Us</h5>
+                    <h4 class="mt-2 ">Call Us</h4>
                     <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark">
                         <i class="bi bi-telephone"></i> +84865958173</a>
                     <br>
                     <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark">
                         <i class="bi bi-telephone"></i> +84956859812</a>
-                    <h5 class="mt-2">Follow Us</h5>
+                    <h4 class="mt-2">Follow Us</h4>
                     <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
                         <i class="bi bi-meta"></i> Meta</a>
                     <br>
@@ -89,7 +93,8 @@
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Address</label>
-                        <input type="text" class="form-control shadow-none" placeholder="128C Dai La, Hai Ba Trung, Ha Noi ">
+                        <input type="text" class="form-control shadow-none"
+                            placeholder="128C Dai La, Hai Ba Trung, Ha Noi ">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Title</label>
@@ -117,7 +122,8 @@
 
     <!-- Button Login -->
 
-    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="loginModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form>
@@ -125,16 +131,17 @@
                         <h5 class="modal-title d-flex align-items-center">
                             <i class="bi bi-person-circle fs-3 me-2"></i> User Login
                         </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
-                            <input type="email" class="form-control shadow-none">
+                            <input type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="email" class="form-control shadow-none">
+                            <input type="password" class="form-control shadow-none">
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
@@ -149,7 +156,8 @@
 
     <!-- Button Register -->
 
-    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="registerModal" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form>
@@ -157,7 +165,8 @@
                         <h5 class="modal-title d-flex align-items-center">
                             <i class="bi bi-person-lines-fill fs-3 me-2"></i> User Register
                         </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <span class="badge text-bg-light mb-3 text-wrap lh-base note-font">
@@ -196,67 +205,71 @@
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control shadow-none">
+                                    <input type="password" class="form-control shadow-none" id="password"
+                                        onchange="check_pass();">
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control shadow-none">
+                                    <input type="password" class="form-control shadow-none" id="retype_password"
+                                        onchange="check_pass();">
                                 </div>
                             </div>
                             <div class="text-center my-1">
-                                <button type="summit" class="btn btn-dark shadow-none">REGISTER</button>
+                                <button type="summit" class="btn btn-dark shadow-none" id="submit" disabled
+                                    value="registration">REGISTER</button>
                             </div>
                         </div>
                 </form>
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+        <script src="./js/invalid.js"></script>
         <script>
-            var swiper = new Swiper(".swiper-container", {
-                spaceBetween: 30,
-                effect: "fade",
-                loop: true,
-                autoplay: {
-                    delay: 3500,
-                    disableOnIteraction: false,
-                }
-            });
-            var swiper = new Swiper(".swiper-comment", {
-                effect: "coverflow",
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: "auto",
-                slidesPerView: "2",
-                loop: true,
-                coverflowEffect: {
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: false,
+        var swiper = new Swiper(".swiper-container", {
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnIteraction: false,
+            }
+        });
+        var swiper = new Swiper(".swiper-comment", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            slidesPerView: "2",
+            loop: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
                 },
-                pagination: {
-                    el: ".swiper-pagination",
+                640: {
+                    slidesPerView: 1,
                 },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                    },
-                    640: {
-                        slidesPerView: 1,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 2,
-                    }
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 2,
                 }
-            });
+            }
+        });
         </script>
 
 </body>
