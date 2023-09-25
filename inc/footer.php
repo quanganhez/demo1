@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 require('admin/inc/db_config.php');
@@ -14,8 +14,6 @@ $contact_r = mysqli_fetch_assoc(select($contact_q,$value,'i'));
 
 ?>
 
-=======
->>>>>>> d9f4d7ef5e8ac15ca91bf0f3b8b196c2803a8d6b
 <div class="container-fluid  mt-5" id="footer" style="background:antiquewhite ;">
     <footer class="text-center text-lg-start bg-light text-muted">
 
@@ -75,7 +73,6 @@ $contact_r = mysqli_fetch_assoc(select($contact_q,$value,'i'));
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <h5 class="text-uppercase fw-bold mb-4">Contact</h5>
-<<<<<<< HEAD
                         <p><i class="bi bi-house"></i> <?php echo $contact_r['address'] ?></p>
                         <p><i class="bi bi-telephone"></i> <?php echo $contact_r['pn1'] ?></p>
                         <p><i class="bi bi-telephone"></i> <?php echo $contact_r['pn2'] ?></p>
@@ -100,37 +97,6 @@ $contact_r = mysqli_fetch_assoc(select($contact_q,$value,'i'));
                         <a href="<?php echo $contact_r['linkedin'] ?>" class="me-4 text-reset">
                             <i class="bi bi-linkedin"></i>
                         </a>
-=======
-                        <p><i class="bi bi-house"></i> Minh Khai, Ha Noi, VietNam</p>
-                        <p>
-                            <i class="bi bi-envelope"></i>
-                            dangcapvutru@gmail.com
-                        </p>
-                        <p><i class="bi bi-telephone"></i> +84865958173</p>
-                        <p><i class="bi bi-telephone"></i> +84956859812</p>
->>>>>>> d9f4d7ef5e8ac15ca91bf0f3b8b196c2803a8d6b
-                    </div>
-                </div>
-                <div
-                    class="d-flex flex-column flex-md-column flex-lg-row  justify-content-lg-between  align-items-sm-center ">
-                    <div class=" p-4">
-                        © 2023 Copyright
-                        <a class="text-reset  text-dark text-decoration-none" href="#">Red Technology</a>
-                    </div>
-                    <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                        <a href="#" class="me-4 text-reset">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#" class="me-4 text-reset">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#" class="me-4 text-reset">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="#" class="me-4 text-reset">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>

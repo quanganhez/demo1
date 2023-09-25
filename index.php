@@ -327,13 +327,10 @@
         <div class="row">
             <div class="col-lg-8 col-md-8">
                 <iframe
-<<<<<<< HEAD
                     src="<?php echo $contact_r['iframe'] ?>"
                     width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-=======
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1692990327541!5m2!1svi!2s"
                     width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
->>>>>>> d9f4d7ef5e8ac15ca91bf0f3b8b196c2803a8d6b
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-4 col-md-4 ">
@@ -404,110 +401,6 @@
     <!-- Footer -->
 
     <?php require('./inc/footer.php') ?>
-
-    <!-- Button Login -->
-
-    <div class="modal fade" id="loginModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person-circle fs-3 me-2"></i> User Login
-                        </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <input type="text" class="form-control shadow-none">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control shadow-none">
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
-                            <a href="javascript: void(0)" class="text-secondary text-decoration-none ">Forgot
-                                Password?</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Button Register -->
-
-    <div class="modal fade" id="registerModal" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person-lines-fill fs-3 me-2"></i> User Register
-                        </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <span class="badge text-bg-light mb-3 text-wrap lh-base note-font">
-                            Note: Thông tin của bạn phải đúng với giấy tờ (CCCD, CMND, GPLX, etc...) vì sẽ được kiểm tra
-                            lại lúc check-in.
-                        </span>
-                        <div class="container-fluid" id="groupinput">
-                            <div class="row">
-                                <div class="col-md-6 ps-0 mb-3" id="name">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control shadow-none ">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control shadow-none" id="email">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="number" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Picture</label>
-                                    <input type="file" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-12 ps-0 mb-3">
-                                    <label class="form-label">Address</label>
-                                    <textarea class="form-control shadow-none" rows="1"></textarea>
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Pincode</label>
-                                    <input type="number" class="form-control shadow-none" id="pincode">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Date of birth</label>
-                                    <input type="date" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control shadow-none" id="password"
-                                        onchange="check_pass();">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control shadow-none" id="retype_password"
-                                        onchange="check_pass();">
-                                </div>
-                            </div>
-                            <div class="text-center my-1">
-                                <button type="summit" class="btn btn-dark shadow-none" id="submit" disabled
-                                    value="registration">REGISTER</button>
-                            </div>
-                        </div>
-                </form>
-            </div>
-        </div>
-        <script src="./js/invalid.js"></script>
 
     <?php require('./inc/button.php') ?>
 
