@@ -1,6 +1,6 @@
 <?php
     if (!defined('SITE_URL')) {
-        define('SITE_URL', 'http://127.0.1/Demo1');
+        define('SITE_URL', 'http://127.0.1/');
     }
 
     if (!function_exists('customalert')){
