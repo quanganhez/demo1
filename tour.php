@@ -1,3 +1,9 @@
+<?php 
+    require('./inc/loginlogic.php');
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -425,7 +431,6 @@
     <?php require('./inc/footer.php') ?>
 
     <!-- Button Login -->
-
     <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -525,8 +530,13 @@
                         </div>
                 </form>
             </div>
-        </div>
+        </div>  
+    <?php require('./inc/button.php') ?>
 
+    <!-- Button regiter -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>
