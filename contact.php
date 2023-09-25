@@ -6,18 +6,20 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travel - Contact Page</title>
     <?php require('./inc/links.php') ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
-  <body class="bg-light">
+
+<body class="bg-light">
 
     <!-- Navigation -->
-        
+
     <?php require('./inc/header.php') ?>
 
     <!-- Contact Page -->
@@ -26,42 +28,54 @@
         <h1 class="fw-bold header-font text-center">Contact Us</h1>
         <div class="header-line bg-dark"></div>
         <p class="text-center mt-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula tellus id nibh <br> venenatis tempor. 
-        Donec iaculis dui nunc, non blandit odio blandit et.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula tellus id nibh <br> venenatis
+            tempor.
+            Donec iaculis dui nunc, non blandit odio blandit et.
         </p>
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row  ">
             <div class="col-lg-6 col-md-6 mb-5 px-4">
-                <div class="bg-white rounded shadow p-4">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1693039036148!5m2!1svi!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <h5 class="mt-2">Address</h5>
-                    <a href="https://goo.gl/maps/RPFmhsk5iGP35XL79" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-geo-alt-fill"></i> HaNoi,VietNam
+                <div class="bg-white rounded shadow p-4  ">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1693039036148!5m2!1svi!2s"
+                        width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <h4 class="mt-2">Address</h4>
+
+                    <a href="https://goo.gl/maps/RPFmhsk5iGP35XL79"
+                        class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-geo-alt-fill"></i> Ha Noi, Viet Nam
                     </a>
-                    <h5 class="mt-2">Call Us</h5>
+
+                    <br>
+                    <i class="bi bi-geo-alt-fill"></i> <a>128C Dai La, Hai Ba Trung, Ha Noi</a>
+                    <h4 class="mt-2 ">Call Us</h4>
                     <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark">
-                    <i class="bi bi-telephone"></i> +84865958173</a>
+                        <i class="bi bi-telephone"></i> +84865958173</a>
                     <br>
                     <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark">
-                    <i class="bi bi-telephone"></i> +84956859812</a>
-                    <h5 class="mt-2">Follow Us</h5>
+                        <i class="bi bi-telephone"></i> +84956859812</a>
+                    <h4 class="mt-2">Follow Us</h4>
                     <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-meta"></i> Meta</a>
+                        <i class="bi bi-meta"></i> Meta</a>
                     <br>
                     <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-instagram"></i> Instagram</a>
+                        <i class="bi bi-instagram"></i> Instagram</a>
                     <br>
                     <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-github"></i> Github</a>
+                        <i class="bi bi-github"></i> Github</a>
                     <br>
                     <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-linkedin"></i> Linkedin</a>
+                        <i class="bi bi-linkedin"></i> Linkedin</a>
+                    <br>
+                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
+                        <i class="bi-youtube"></i> Youtube</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-5 px-4">
-               <div class="bg-white rounded shadow p-4">
+                <div class="bg-white rounded shadow p-4">
                     <h5 class="mt-2">Send a infomation</h5>
                     <div class="mt-3">
                         <label class="form-label">Type of information</label>
@@ -73,19 +87,20 @@
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control shadow-none">
+                        <input type="text" class="form-control shadow-none" placeholder="Vu Hoang A">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control shadow-none">
+                        <input type="email" class="form-control shadow-none" placeholder="Hugololo@gmail.com">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Tel</label>
-                        <input type="number" class="form-control shadow-none">
+                        <input type="number" class="form-control shadow-none" placeholder="+844239327">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Address</label>
-                        <input type="text" class="form-control shadow-none">
+                        <input type="text" class="form-control shadow-none"
+                            placeholder="128C Dai La, Hai Ba Trung, Ha Noi ">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Title</label>
@@ -95,9 +110,10 @@
                         <label class="form-label">Message</label>
                         <textarea class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
                     </div>
-                    <div class="text-center"> <!-- Add text-center class here -->
+                    <div class="text-center">
+                        <!-- Add text-center class here -->
                         <button type="submit" class="btn btn-primary text-white mt-3">
-                            Send To
+                            Send
                             <i class="bi bi-airplane"></i>
                         </button>
                     </div>
@@ -111,24 +127,126 @@
     <?php require('./inc/footer.php') ?>
 
     <!-- Button Login -->
+    <div class="modal fade" id="loginModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h5 class="modal-title d-flex align-items-center">
+                            <i class="bi bi-person-circle fs-3 me-2"></i> User Login
+                        </h5>
+                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input type="text" class="form-control shadow-none">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control shadow-none">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
+                            <a href="javascript: void(0)" class="text-secondary text-decoration-none">Forgot
+                                Password?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-    
+    <!-- Button Register -->
+
+    <div class="modal fade" id="registerModal" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h5 class="modal-title d-flex align-items-center">
+                            <i class="bi bi-person-lines-fill fs-3 me-2"></i> User Register
+                        </h5>
+                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="badge text-bg-light mb-3 text-wrap lh-base note-font">
+                            Note: Thông tin của bạn phải đúng với giấy tờ (CCCD, CMND, GPLX, etc...) vì sẽ được kiểm tra
+                            lại lúc check-in.
+                        </span>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control shadow-none">
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control shadow-none">
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="number" class="form-control shadow-none">
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Picture</label>
+                                    <input type="file" class="form-control shadow-none">
+                                </div>
+                                <div class="col-md-12 ps-0 mb-3">
+                                    <label class="form-label">Address</label>
+                                    <textarea class="form-control shadow-none" rows="1"></textarea>
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Pincode</label>
+                                    <input type="number" class="form-control shadow-none">
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Date of birth</label>
+                                    <input type="date" class="form-control shadow-none">
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control shadow-none" id="password"
+                                        onchange="check_pass();">
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control shadow-none" id="retype_password"
+                                        onchange="check_pass();">
+                                </div>
+                            </div>
+                            <div class="text-center my-1">
+                                <button type="summit" class="btn btn-dark shadow-none" id="submit" disabled
+                                    value="registration">REGISTER</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div> 
     <?php require('./inc/button.php') ?>
 
     <!-- Button Regiter -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="./js/invalid.js"></script>
+        <script>
         var swiper = new Swiper(".swiper-container", {
-        spaceBetween: 30,
-        effect: "fade",
-        loop: true,
-        autoplay: {
-            delay: 3500,
-            disableOnIteraction: false,
-        }
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnIteraction: false,
+            }
         });
         var swiper = new Swiper(".swiper-comment", {
             effect: "coverflow",
@@ -162,7 +280,8 @@
                 }
             }
         });
-    </script>
+        </script>
 
-  </body>
+</body>
+
 </html>
