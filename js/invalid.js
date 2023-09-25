@@ -6,3 +6,12 @@ function check_pass() {
         document.getElementById('submit').disabled = true;
     }
 }
+function check_pass_login() {
+    if (document.getElementById('emailaddress').value ==
+            document.getElementById('password_login').value) {
+        document.getElementById('button_login').disabled = false;
+    } else {
+        document.getElementById('button_login').disabled = true;
+    }
+}
+
