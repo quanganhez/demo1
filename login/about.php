@@ -20,21 +20,36 @@
         <h1 class="fw-bold header-font text-center">About Us</h1>
         <div class="header-line bg-dark"></div>
         <p class="text-center mt-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula tellus id nibh <br> venenatis tempor. 
-        Donec iaculis dui nunc, non blandit odio blandit et.
+            Our company can help you with a wide range of travel needs,
+            Ztravel company can be a valuable resource for travelers, especially those who are planning complex trips or
+            traveling to unfamiliar destinations. They can save you time and money, and they can help you to avoid any
+            potential problems.
+            Ztravel company is a full-service travel agency that has been helping travelers to explore the world for
+            over 50 years. We specialize in creating custom travel packages to suit the needs and interests of all of
+            our clients. Whether you are looking for a romantic getaway, a family vacation, or an adventure trip, we can
+            help you to plan the perfect trip.
+
         </p>
     </div>
 
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-                <h2 class="mb-3">Leader</h2>
+                <h2 class="mb-3">Ztravel company</h2>
                 <p>
-                "I commit to providing an excellent experience for customers
-                when booking tours on our website. We will ensure that detailed 
-                and accurate information about the tours is updated regularly. 
-                We will provide a user-friendly interface that allows customers to easily search, 
-                compare, and book tours according to their preferences."
+                    " Our team of experienced travel agents has a wealth of knowledge about destinations all over the
+                    world. We
+                    can help you to choose the right destination for your trip, and we can book all of your travel
+                    arrangements
+                    for you. We can also provide you with advice on what to see and do, and we can help you to obtain
+                    any
+                    necessary visas or other travel documents.
+
+                    We are committed to providing our clients with the best possible travel experience. We take the time
+                    to
+                    understand your needs and interests, and we work hard to create a travel package that you will love.
+                    Contact
+                    us today to start planning your dream vacation!"
                 </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1 tour-item rounded">

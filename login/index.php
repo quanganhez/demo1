@@ -1,44 +1,6 @@
- <?php
-
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '';
-    $database = 'demo1';
-    $con = new mysqli($servername, $username, $password, $database);
-
-    // Check connection
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $user_name = $_POST["user_name"];
-        $user_pass = $_POST["user_pass"];
-
-        // Truy vấn kiểm tra tài khoản và mật khẩu
-        $sql = "SELECT id, user_name, user_pass, role FROM db_user WHERE user_name = '$user_name' AND user_pass = '$user_pass'";
-        $result = $con->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $role = $row["role"];
-
-            if ($role == 1) {
-                // Chuyển hướng đến trang admin
-                header("Location: ./admin/admin.php");
-                exit();
-            } else if ($role == 0) {
-                // Chuyển hướng đến trang user
-                header("Location: ./login/login.php");
-                exit();
-            }
-        } else {
-            echo "Tài khoản hoặc mật khẩu không đúng.";
-        }
-    }
-
-    $con->close();
-    ?>
+<?php 
+    require('../inc/loginlogic.php');
+?>
 
 
 <!doctype html>
@@ -350,37 +312,83 @@
 
     <!-- Contact us -->
 
+    <?php
+
+    $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
+    $value = [1];
+    $contact_r = mysqli_fetch_assoc(select($contact_q,$value,'i'));
+
+    ?>
+
     <h1 class="mt-5 pt-4 mb-4 text-center fw-bold header-font">Contact Us</h1>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1692990327541!5m2!1svi!2s"
+                    src="<?php echo $contact_r['iframe'] ?>"
                     width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="bg-white rounded p-4">
                     <h5>Call Us</h5>
-                    <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-telephone"></i> +84865958173</a>
+                    <a href="tel: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
+                        <i class="bi bi-telephone"></i> +<?php echo $contact_r['pn1'] ?></a>
                     <br>
-                    <h5>Or</h5>
-                    <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-telephone"></i> +84956859812</a>
+                    <?php
+                        if($contact_r['pn2']!=''){
+                            echo<<<data
+                            <a href="tel: +$contact_r[pn2]" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
+                            <i class="bi bi-telephone"></i> +$contact_r[pn2]</a>
+                            data;
+                        }
+                    ?>
                 </div>
                 <br>
                 <div class="bg-white rounded p-4">
                     <h5>Follow Us</h5>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-meta"></i> Meta</a>
-                    <br>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-instagram"></i> Instagram</a>
-                    <br>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-github"></i> Github</a>
+                    <?php
+                        if($contact_r['meta']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[meta]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                            <i class="bi bi-github"></i> Github</a>
+                            <br>
+                            data;
+                        }
+                    ?>
+                    <?php
+                        if($contact_r['ins']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[ins]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                            <i class="bi bi-instagram"></i> Instagram</a>
+                            <br>
+                            data;
+                        }
+                    ?>
+                    <?php
+                        if($contact_r['github']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[github]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                            <i class="bi bi-github"></i> Github</a>
+                            <br>
+                            data;
+                        }
+                    ?>
+                    <?php
+                        if($contact_r['linkedin']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[linkedin]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                            <i class="bi bi-linkedin"></i> Linkedin</a>
+                            <br>
+                            data;
+                        }
+                    ?>
+
                 </div>
             </div>
 
@@ -393,103 +401,9 @@
 
     <!-- Button Login -->
 
-    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST">
-                    <div class="modal-header">
-                        <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person-circle fs-3 me-2"></i> User Login
-                        </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <input name="user_name" type="text" class="form-control shadow-none">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input name="user_pass" type="password" class="form-control shadow-none">
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
-                            <a href="javascript: void(0)" class="text-secondary text-decoration-none ">Forgot
-                                Password?</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Button Register -->
+    <?php require('./inc/button.php') ?>
 
-    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person-lines-fill fs-3 me-2"></i> User Register
-                        </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <span class="badge text-bg-light mb-3 text-wrap lh-base note-font">
-                            Note: Thông tin của bạn phải đúng với giấy tờ (CCCD, CMND, GPLX, etc...) vì sẽ được kiểm tra
-                            lại lúc check-in.
-                        </span>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="number" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Picture</label>
-                                    <input type="file" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-12 ps-0 mb-3">
-                                    <label class="form-label">Address</label>
-                                    <textarea class="form-control shadow-none" rows="1"></textarea>
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Pincode</label>
-                                    <input type="number" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Date of birth</label>
-                                    <input type="date" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control shadow-none">
-                                </div>
-                                <div class="col-md-6 ps-0 mb-3">
-                                    <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control shadow-none">
-                                </div>
-                            </div>
-                            <div class="text-center my-1">
-                                <button type="summit" class="btn btn-dark shadow-none">REGISTER</button>
-                            </div>
-                        </div>
-                </form>
-            </div>
-        </div>
+    <!-- Button Reginter -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">

@@ -307,39 +307,85 @@
 
     <!-- Contact us -->
 
-    <h1 class="mt-5 pt-4 mb-4 text-center fw-bold header-font">Contact Us</h1>
+    <?php
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1692990327541!5m2!1svi!2s"
-                    width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <div class="bg-white rounded p-4">
-                    <h5>Call Us</h5>
-                    <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-telephone"></i> +84865958173</a>
-                    <br>
-                    <h5>Or</h5>
-                    <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-telephone"></i> +84956859812</a>
-                </div>
+$contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
+$value = [1];
+$contact_r = mysqli_fetch_assoc(select($contact_q,$value,'i'));
+
+?>
+
+<h1 class="mt-5 pt-4 mb-4 text-center fw-bold header-font">Contact Us</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <iframe
+                src="<?php echo $contact_r['iframe'] ?>"
+                width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="bg-white rounded p-4">
+                <h5>Call Us</h5>
+                <a href="tel: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
+                    <i class="bi bi-telephone"></i> +<?php echo $contact_r['pn1'] ?></a>
                 <br>
-                <div class="bg-white rounded p-4">
-                    <h5>Follow Us</h5>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-meta"></i> Meta</a>
-                    <br>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-instagram"></i> Instagram</a>
-                    <br>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
-                        <i class="bi bi-github"></i> Github</a>
-                </div>
+                <?php
+                    if($contact_r['pn2']!=''){
+                        echo<<<data
+                        <a href="tel: +$contact_r[pn2]" class="d-inline-block mb-2 text-decoration-none text-dark fw-bold">
+                        <i class="bi bi-telephone"></i> +$contact_r[pn2]</a>
+                        data;
+                    }
+                ?>
             </div>
+            <br>
+            <div class="bg-white rounded p-4">
+                <h5>Follow Us</h5>
+                <?php
+                    if($contact_r['meta']!='')
+                    {
+                        echo<<<data
+                        <a href="$contact_r[meta]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                        <i class="bi bi-github"></i> Github</a>
+                        <br>
+                        data;
+                    }
+                ?>
+                <?php
+                    if($contact_r['ins']!='')
+                    {
+                        echo<<<data
+                        <a href="$contact_r[ins]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                        <i class="bi bi-instagram"></i> Instagram</a>
+                        <br>
+                        data;
+                    }
+                ?>
+                <?php
+                    if($contact_r['github']!='')
+                    {
+                        echo<<<data
+                        <a href="$contact_r[github]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                        <i class="bi bi-github"></i> Github</a>
+                        <br>
+                        data;
+                    }
+                ?>
+                <?php
+                    if($contact_r['linkedin']!='')
+                    {
+                        echo<<<data
+                        <a href="$contact_r[linkedin]" class="d-inline-block mb-3 text-decoration-none text-dark fw-bold">
+                        <i class="bi bi-linkedin"></i> Linkedin</a>
+                        <br>
+                        data;
+                    }
+                ?>
+
+            </div>
+        </div>
 
         </div>
     </div>

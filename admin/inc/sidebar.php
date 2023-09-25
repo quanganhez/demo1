@@ -19,7 +19,7 @@
                             <a class="nav-link text-white" href="#">Tours</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Users</a>
+                            <a class="nav-link text-white" href="user_queries.php">Users Queries</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="settings.php">Setting</a>

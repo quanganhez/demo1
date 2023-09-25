@@ -31,80 +31,143 @@
         </p>
     </div>
 
+    <?php 
+
+        $contact_q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
+        $value = [1];
+        $contact_r = mysqli_fetch_assoc(select($contact_q,$value,'i'));
+
+    ?>
+
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.988211049866!2d105.8369637!3d21.022739599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1693039036148!5m2!1svi!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="<?php echo $contact_r['iframe'] ?>" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5 class="mt-2">Address</h5>
-                    <a href="https://goo.gl/maps/RPFmhsk5iGP35XL79" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-geo-alt-fill"></i> HaNoi,VietNam
+                    <a href="<?php echo$contact_r['gmaps']?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-geo-alt-fill"></i> <?php echo$contact_r['address']?>
                     </a>
                     <h5 class="mt-2">Call Us</h5>
-                    <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark">
-                    <i class="bi bi-telephone"></i> +84865958173</a>
+                    <a href="tel: +<?php echo$contact_r['pn1']?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <i class="bi bi-telephone"></i> +<?php echo$contact_r['pn1']?></a>
                     <br>
-                    <a href="tel: +84865958173" class="d-inline-block mb-2 text-decoration-none text-dark">
-                    <i class="bi bi-telephone"></i> +84956859812</a>
+                    <?php
+                        if($contact_r['pn2']!=''){
+                            echo<<<data
+                            <a href="tel: +$contact_r[pn2]" class="d-inline-block mb-2 text-decoration-none text-dark">
+                            <i class="bi bi-telephone"></i> +$contact_r[pn2]</a>
+                            data;
+                        }
+                    ?>
                     <h5 class="mt-2">Follow Us</h5>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-meta"></i> Meta</a>
-                    <br>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-instagram"></i> Instagram</a>
-                    <br>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-github"></i> Github</a>
-                    <br>
-                    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
-                    <i class="bi bi-linkedin"></i> Linkedin</a>
+                    <?php
+                        if($contact_r['meta']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[meta]" class="d-inline-block mb-3 text-decoration-none text-dark">
+                            <i class="bi bi-meta"></i> Meta</a>
+                            <br>
+                            data;
+                        }
+                    ?>
+                       <?php
+                        if($contact_r['ins']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[ins]" class="d-inline-block mb-3 text-decoration-none text-dark">
+                            <i class="bi bi-instagram"></i> Instagram</a>
+                            <br>
+                            data;
+                        }
+                    ?>
+                       <?php
+                        if($contact_r['github']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[github]" class="d-inline-block mb-3 text-decoration-none text-dark">
+                            <i class="bi bi-github"></i> Github</a>
+                            <br>
+                            data;
+                        }
+                    ?>
+                       <?php
+                        if($contact_r['linkedin']!='')
+                        {
+                            echo<<<data
+                            <a href="$contact_r[linkedin]" class="d-inline-block mb-3 text-decoration-none text-dark">
+                            <i class="bi bi-linkedin"></i> Linkedin</a>
+                            <br>
+                            data;
+                        }
+                    ?>
                 </div>
             </div>
+            
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                <div class="bg-white rounded shadow p-4">
-                    <h5 class="mt-2">Send a infomation</h5>
-                    <div class="mt-3">
-                        <label class="form-label">Type of information</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="1">Tour</option>
-                            <option value="2">Customer service</option>
-                            <option value="3">Other</option>
-                        </select>
-                    </div>
+                <form method="POST">
+                <h5 class="mt-2">Send a infomation</h5>
                     <div class="mt-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control shadow-none">
+                        <input type="text" name="name" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control shadow-none">
+                        <input type="email" name="email" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Tel</label>
-                        <input type="number" class="form-control shadow-none">
+                        <input type="number" name="tel" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Address</label>
-                        <input type="text" class="form-control shadow-none">
+                        <input type="text" name="address" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Title</label>
-                        <input type="text" class="form-control shadow-none">
+                        <input type="text" name="title" class="form-control shadow-none">
                     </div>
                     <div class="mt-3">
                         <label class="form-label">Message</label>
-                        <textarea class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+                        <textarea name="message" class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
                     </div>
                     <div class="text-center"> <!-- Add text-center class here -->
-                        <button type="submit" class="btn btn-primary text-white mt-3">
+                        <button type="submit" disabled name="send" class="btn btn-primary text-white mt-3">
                             Send To
                             <i class="bi bi-airplane"></i>
                         </button>
                     </div>
+                </form>
+                    
                 </div>
             </div>
         </div>
     </div>
+
+
+    <?php
+
+    if(isset($_POST['send']))
+    {
+        $frm_data = filter($_POST);
+
+        $q = "INSERT INTO `user_queries`(`name`, `email`, `tel`, `address`, `title`, `message`) VALUES (?,?,?,?,?,?)";
+
+        $values = [$frm_data['name'],$frm_data['email'],$frm_data['tel'],$frm_data['address'],$frm_data['title'],$frm_data['message']];
+
+        $res = insert($q,$values,'ssssss');
+
+        if($res==1){
+            echo 'Thanh cong';
+        }
+        else {
+            echo 'That bai';
+        }
+    }
+
+    ?>
 
     <!-- Footer -->
 

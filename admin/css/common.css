@@ -21,3 +21,8 @@
         margin-top: 60px;
     }
 }
+.custom-alert {
+    position: fixed;
+    right: 25px;
+    top: 100px;
+}
