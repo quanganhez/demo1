@@ -1,3 +1,9 @@
+<?php
+require_once('connection.php');
+
+$sql = "SELECT * FROM ql_tour ";
+
+$data = mysqli_query($con, $sql); ?>
 <!doctype html>
 <html lang="en">
 
@@ -8,6 +14,10 @@
     <?php require('./inc/links.php') ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -31,394 +41,122 @@
     <div class="container">
         <h2 class="my-4">Foreign Tour</h2>
         <div class="row">
-
+            <?php while ($row = mysqli_fetch_assoc($data)) {  ?>
             <div class="d-grid col-lg-4 col-md-6 mb-5 ">
+
                 <div class="card border-0 shadow rounded tour-item"
                     style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
+
+
+
+
+
+                    <img src="<?php echo $row['avatar'] ?>" class="card-img-top" style="height: 250px;">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
+
+                        <h5 class="card-title note-font fw-bold"><?php echo $row['name_tour'] ?></h5>
                         <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
+                            <i class="bi bi-ticket"></i> <?php echo $row['code_tour'] ?>
                         </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
+                        <p class="card-text"><?php echo $row['start'] ?></p>
+
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
+                            <p class="price-color fw-bold mb-2"><?php echo $row['price'] ?></p>
+
                         </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
+
+                        <button type="button" href="#" class="btn btn-primary w-100 mt-3" data-bs-toggle="modal"
+                            data-bs-target="#tour_payment" id="<?php echo $row['id'] ?>">Booking now</button>
                     </div>
                 </div>
+
             </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/2.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>31/08/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">Flower and Sea Journey: Dalat - Nha Trang - Vietnam
-                            National Day on September 2nd.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN5251-062-310823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>5,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">5,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">5% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/3.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>03/09/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">China: Zhangjiajie - Phoenix Ancient Town - Tianmen
-                            Mountain - Yuanjiajie | 5-star hotel, 5 days 4 nights.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN381-031-030923VJ-H
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>15,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">14,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">6% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/4.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>13/09/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">Dubai - Abu Dhabi (Enjoy a buffet meal at a 5-star
-                            hotel, complimentary tickets to Burj Khalifa & ice café).</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN937-080-130923EK-D
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>30,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">29,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">3% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/5.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>08/09/2023 - 6 days</p>
-                        <h5 class="card-title note-font fw-bold">China: Chengdu - Jiuzhaigou - Huanglong Paradise on
-                            Earth(5-star hotel stay).</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN352-019-0809233U-D
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>20,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">18,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">12% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/6.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>13/09/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">China: Shanghai - Hangzhou - Suzhou - Discounted price
-                            reduced by 1,500,000 VND per person.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN312-010-130923CZ-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>16,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">14,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">15% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
+
+            <?php
+
+            }
+            ?>
+            <script>
+            $(document).ready(function() {
+                $('button').click(function() {
+                    id_emp = $(this).attr('id')
+                    $.ajax({
+                        url: "select.php",
+                        method: 'post',
+                        data: {
+                            emp_id: id_emp
+                        },
+                        success: function(result) {
+                            $(".modal-body").html(result);
+                        }
+                    });
+
+
+                    $('#tour_payment').modal("Booking now");
+                })
+            })
+            </script>
         </div>
     </div>
     <div class="container">
         <h2 class="my-4">Dometics Tour</h2>
         <div class="row">
+            <?php while ($row = mysqli_fetch_assoc($data)) {  ?>
+            <div class="d-grid col-lg-4 col-md-6 mb-5 ">
 
-            <div class="col-lg-4 col-md-6 mb-5">
                 <div class="card border-0 shadow rounded tour-item"
                     style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
+
+
+
+
+
+                    <img src="<?php echo $row['avatar'] ?>" class="card-img-top" style="height: 250px;">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
+
+                        <h5 class="card-title note-font fw-bold"><?php echo $row['name_tour'] ?></h5>
                         <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
+                            <i class="bi bi-ticket"></i> <?php echo $row['code_tour'] ?>
                         </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
+                        <p class="card-text"><?php echo $row['start'] ?></p>
+
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
+                            <p class="price-color fw-bold mb-2"><?php echo $row['price'] ?></p>
+
                         </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
+
+                        <button type="button" href="#" class="btn btn-primary w-100 mt-3" data-bs-toggle="modal"
+                            data-bs-target="#tour_payment" id="<?php echo $row['id'] ?>">Booking now</button>
                     </div>
                 </div>
+
             </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/2.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>31/08/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">Flower and Sea Journey: Dalat - Nha Trang - Vietnam
-                            National Day on September 2nd.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN5251-062-310823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>5,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">5,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">5% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/3.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>03/09/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">China: Zhangjiajie - Phoenix Ancient Town - Tianmen
-                            Mountain - Yuanjiajie | 5-star hotel, 5 days 4 nights.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN381-031-030923VJ-H
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>15,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">14,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">6% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/4.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>13/09/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">Dubai - Abu Dhabi (Enjoy a buffet meal at a 5-star
-                            hotel, complimentary tickets to Burj Khalifa & ice café).</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN937-080-130923EK-D
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>30,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">29,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">3% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/5.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>08/09/2023 - 6 days</p>
-                        <h5 class="card-title note-font fw-bold">China: Chengdu - Jiuzhaigou - Huanglong Paradise on
-                            Earth(5-star hotel stay).</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN352-019-0809233U-D
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>20,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">18,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">12% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/6.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>13/09/2023 - 5 days</p>
-                        <h5 class="card-title note-font fw-bold">China: Shanghai - Hangzhou - Suzhou - Discounted price
-                            reduced by 1,500,000 VND per person.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NNSGN312-010-130923CZ-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>16,990,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">14,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">15% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5">
-                <div class="card border-0 shadow rounded tour-item"
-                    style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
-                    <img src="./images/Tours/1.jpg" class="card-img-top" style="height: 250px;">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
-                        <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
-                            Hills Dalat - Boost tourism.</h5>
-                        <p class="card-text">Tour code: <br>
-                            <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
-                        </p>
-                        <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
-                        </div>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+                ?>
         </div>
-    </div>
+        <script>
+        $(document).ready(function() {
+            $('button').click(function() {
+                id_emp = $(this).attr('id')
+                $.ajax({
+                    url: "select.php",
+                    method: 'post',
+                    data: {
+                        emp_id: id_emp
+                    },
+                    success: function(result) {
+                        $(".modal-body").html(result);
+                    }
+                });
 
+
+                $('#tour_payment').modal("Booking now");
+            })
+        })
+        </script>
+    </div>
+    <!-- Payment -->
 
     <!-- Footer -->
 
@@ -441,14 +179,17 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
-                            <input type="text" class="form-control shadow-none">
+                            <input type="text" class="form-control shadow-none" id="emailaddress"
+                                onchange="check_pass_login()">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" class="form-control shadow-none">
+                            <input type="password" class="form-control shadow-none" id="password_login"
+                                onchange="check_pass_login()">
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
-                            <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
+                            <button type="summit" class="btn btn-dark shadow-none" disabled
+                                id="button_login">LOGIN</button>
                             <a href="javascript: void(0)" class="text-secondary text-decoration-none ">Forgot
                                 Password?</a>
                         </div>
@@ -474,7 +215,8 @@
                     </div>
                     <div class="modal-body">
                         <span class="badge text-bg-light mb-3 text-wrap lh-base note-font">
-                            Note: Thông tin của bạn phải đúng với giấy tờ (CCCD, CMND, GPLX, etc...) vì sẽ được kiểm tra
+                            Note: Thông tin của bạn phải đúng với giấy tờ (CCCD, CMND, GPLX, etc...) vì sẽ được
+                            kiểm tra
                             lại lúc check-in.
                         </span>
                         <div class="container-fluid">

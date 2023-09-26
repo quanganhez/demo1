@@ -133,17 +133,17 @@
                     style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
                     <img src="./images/Tours/1.jpg" class="card-img-top">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <p>29/08/2023 - 4 days</p>
+
                         <h5 class="card-title note-font fw-bold">Da Lat - Dambri Waterfall - Cau Dat Tea Hill - Samten
                             Hills Dalat - Boost tourism.</h5>
                         <p class="card-text">Tour code: <br>
                             <i class="bi bi-ticket"></i> NDSGN548-055-290823XE-V
                         </p>
                         <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>3,790,000₫</p>
+
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="price-color fw-bold mb-2">3,490,000₫</p>
-                            <button class="btn btn-sm btn-danger">8% Discount</button>
+
                         </div>
                         <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
                     </div>
@@ -154,17 +154,17 @@
                     style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
                     <img src="./images/Tours/2.jpg" class="card-img-top">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <p>31/08/2023 - 5 days</p>
+
                         <h5 class="card-title note-font fw-bold">Flower and Sea Journey: Dalat - Nha Trang - Vietnam
                             National Day on September 2nd.</h5>
                         <p class="card-text">Tour code: <br>
                             <i class="bi bi-ticket"></i> NDSGN5251-062-310823XE-V
                         </p>
                         <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>5,990,000₫</p>
+
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="price-color fw-bold mb-2">5,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">5% Discount</button>
+
                         </div>
                         <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
                     </div>
@@ -175,17 +175,17 @@
                     style="max-width: 380px; margin:auto; height: 650px;border: 1px solid #dddfe2;border-radius: 10px;">
                     <img src="./images/Tours/3.jpg" class="card-img-top">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <p>03/09/2023 - 5 days</p>
+
                         <h5 class="card-title note-font fw-bold">China: Zhangjiajie - Phoenix Ancient Town - Tianmen
                             Mountain - Yuanjiajie | 5-star hotel, 5 days 4 nights.</h5>
                         <p class="card-text">Tour code: <br>
                             <i class="bi bi-ticket"></i> NNSGN381-031-030923VJ-H
                         </p>
                         <p class="card-text">Place of departure: TP. Ho Chi Minh</p>
-                        <p class="card-text fw-bold">Price: <del>15,990,000₫</p>
+
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="price-color fw-bold mb-2">14,990,000₫</p>
-                            <button class="btn btn-sm btn-danger">6% Discount</button>
+
                         </div>
                         <a href="#" class="btn btn-primary w-100 mt-3">Pick a Tour</a>
                     </div>
@@ -373,7 +373,7 @@
                             <input type="password" class="form-control shadow-none">
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
-                            <button type="summit" class="btn btn-dark shadow-none">LOGIN</button>
+                            <button type="summit" class="btn btn-dark shadow-none" disabled>LOGIN</button>
                             <a href="javascript: void(0)" class="text-secondary text-decoration-none ">Forgot
                                 Password?</a>
                         </div>
